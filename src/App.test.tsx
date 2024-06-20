@@ -1,9 +1,27 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import CoinTable from './components/CoinTable';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const mockData = [
+  {
+    id: 'bitcoin',
+    symbol: 'BTC',
+    name: 'Bitcoin',
+    priceUsd: '45000.00',
+    marketCapUsd: '850000000000',
+  },
+];
+
+test('renders CoinTable', () => {
+  render(
+    <CoinTable
+      data={mockData}
+      favorites={[]}
+      onToggleFavorite={() => {}}
+      sortBy="symbol"
+      sortOrder="asc"
+      onSort={() => {}}
+    />
+  );
+  expect(screen.getByText(/Bitcoin/)).toBeInTheDocument();
 });
