@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import CoinDetail from '../components/CoinDetail';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 
 interface Coin {
   id: string;
@@ -20,6 +22,7 @@ const CoinDetails: React.FC = () => {
   const [coin, setCoin] = useState<Coin | null>(null);
   const PRICE_USD = 'Price'
   const MARKET_CAP_USD = 'Market Cap'
+  const VOLUME_24_HR = 'Volume (24 hr)'
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,9 +46,24 @@ const CoinDetails: React.FC = () => {
       <p>
         <span className='page-title'>{coin.name}</span>
         <span className='coin-key'>({coin.symbol})</span>
+        
+        <div>
+          {parseFloat(coin.changePercent24Hr) < 0 ?
+            <div className='loss'>
+              <TrendingDownIcon/>
+              {(0-parseFloat(coin.changePercent24Hr)).toFixed(2)}%
+            </div> :
+            <div className='profit'>
+              <TrendingUpIcon/>
+              {parseFloat(coin.changePercent24Hr).toFixed(2)}%
+            </div>
+          }
+        </div>
       </p>
+      
       <CoinDetail coinKey={PRICE_USD} coinValue={coin.priceUsd}/>
       <CoinDetail coinKey={MARKET_CAP_USD} coinValue={coin.marketCapUsd}/>
+      <CoinDetail coinKey={VOLUME_24_HR} coinValue={coin.volumeUsd24Hr}/>
     </div>
   );
 }

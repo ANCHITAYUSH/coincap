@@ -72,3 +72,11 @@ td a:hover{
   color: #858886;
   padding: 10px;
 }
+
+.profit{
+  color: #16c784;
+}
+
+.loss{
+  color: #ea3943;
+}
