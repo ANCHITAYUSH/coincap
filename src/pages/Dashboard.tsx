@@ -3,6 +3,7 @@ import axios from 'axios';
 import CoinTable from '../components/CoinTable';
 import Pagination from '../components/Pagination';
 import { Coin } from '../interfaces/Coin';
+import { API_URI } from '../constants';
 
 const Dashboard = () => {
 
@@ -16,7 +17,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
         try {
-            const response = await axios.get('https://api.coincap.io/v2/assets');
+            const response = await axios.get(`${API_URI}`);
             setData(response.data.data);
         } catch (error) {
             console.error('Error fetching data', error);

@@ -4,6 +4,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 import { CoinTableProps } from '../interfaces/CoinTableProps';
+import { MARKET_CAP, NAME, PRICE, SYMBOL, USD } from '../constants';
 
 const CoinTable: React.FC<CoinTableProps> = ({
     data, favorites, onToggleFavorite, sortBy, sortOrder, onSort
@@ -21,10 +22,10 @@ const CoinTable: React.FC<CoinTableProps> = ({
                 <thead>
                     <tr className=''  style={{height:"20px"}}>
                         <th style={{width: "5%"}}></th>
-                        <th style={{width: "15%", whiteSpace: 'nowrap'}} onClick={() => handleSort('symbol')}>Symbol {sortBy === 'symbol' ? (sortOrder === 'asc' ? '▲' : '▼') : ''}</th>
-                        <th style={{width: "25%", whiteSpace: 'nowrap'}} onClick={() => handleSort('name')}>Name {sortBy === 'name' ? (sortOrder === 'asc' ? '▲' : '▼') : ''}</th>
-                        <th style={{width: "25%", whiteSpace: 'nowrap'}} onClick={() => handleSort('priceUsd')}>Price (USD) {sortBy === 'priceUsd' ? (sortOrder === 'asc' ? '▲' : '▼') : ''}</th>
-                        <th style={{width: "30%", whiteSpace: 'nowrap'}} onClick={() => handleSort('marketCapUsd')}>Market Cap (USD) {sortBy === 'marketCapUsd' ? (sortOrder === 'asc' ? '▲' : '▼') : ''}</th>
+                        <th style={{width: "15%", whiteSpace: 'nowrap'}} onClick={() => handleSort('symbol')}>{SYMBOL} {sortBy === 'symbol' ? (sortOrder === 'asc' ? ' ▲' : ' ▼') : ''}</th>
+                        <th style={{width: "25%", whiteSpace: 'nowrap'}} onClick={() => handleSort('name')}>{NAME} {sortBy === 'name' ? (sortOrder === 'asc' ? ' ▲' : ' ▼') : ''}</th>
+                        <th style={{width: "25%", whiteSpace: 'nowrap'}} onClick={() => handleSort('priceUsd')}>{PRICE} ({USD}) {sortBy === 'priceUsd' ? (sortOrder === 'asc' ? ' ▲' : ' ▼') : ''}</th>
+                        <th style={{width: "30%", whiteSpace: 'nowrap'}} onClick={() => handleSort('marketCapUsd')}>{MARKET_CAP} ({USD}) {sortBy === 'marketCapUsd' ? (sortOrder === 'asc' ? ' ▲' : ' ▼') : ''}</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -1,3 +1,4 @@
+import { GMT, PRICE, TIME, USD } from '../constants';
 import { HistoryTableProps } from '../interfaces/HistoryTableProps';
 
 const HistoryTable: React.FC<HistoryTableProps> = ({data}) => {
@@ -13,8 +14,8 @@ const HistoryTable: React.FC<HistoryTableProps> = ({data}) => {
         <table className="table table-sm border table-hover">
             <thead>
                 <tr className=''  style={{height:"20px"}}>
-                    <th style={{width: "10%", whiteSpace: 'nowrap'}} >Time (GMT)</th>
-                    <th style={{width: "10%", whiteSpace: 'nowrap'}} >Price (USD)</th>
+                    <th style={{width: "10%", whiteSpace: 'nowrap'}} >{TIME} ({GMT})</th>
+                    <th style={{width: "10%", whiteSpace: 'nowrap'}} >{PRICE} ({USD})</th>
                 </tr>
             </thead>
             <tbody>

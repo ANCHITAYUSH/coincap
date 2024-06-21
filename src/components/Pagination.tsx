@@ -1,6 +1,5 @@
 import React from 'react';
 import { PaginationProps } from '../interfaces/PaginationProps';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
 
