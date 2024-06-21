@@ -93,6 +93,10 @@ const Dashboard = () => {
 
     const totalPages = Math.ceil(data.length / itemsPerPage);
 
+    if(!data || data.length === 0){
+        return <div>Loading...</div>;
+    }
+
     return (
         <div>
             <p className='page-title'>CoinCap</p>

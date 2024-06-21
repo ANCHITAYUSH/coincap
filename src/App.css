@@ -53,10 +53,12 @@ td{
 td a{
   color: #1B9CFC;
   text-decoration: none;
+  transition: font-size 0.3s ease, font-weight 0.3s ease;
 }
 
 td a:hover{
-  color: #ff5546;
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -71,12 +73,45 @@ td a:hover{
 .coin-key{
   color: #858886;
   padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.coin-value{
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.coin-price{
+  font-size: 90px;
+  font-weight: 500;
+  color: black;
 }
 
 .profit{
   color: #16c784;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .loss{
   color: #ea3943;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.coin-card{
+  display: flex;
+  justify-content: space-around;
+}
+
+.history table{
+  width: 100%;
+}
+
+.history tbody{
+  height: 50vh;
 }
