@@ -1,16 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import CoinTable from './CoinTable';
-import Pagination from './Pagination';
-
-
-interface Coin {
-  id: string;
-  symbol: string;
-  name: string;
-  priceUsd: string;
-  marketCapUsd: string;
-}
+import CoinTable from '../components/CoinTable';
+import Pagination from '../components/Pagination';
+import { Coin } from '../interfaces/Coin';
 
 const Dashboard = () => {
 
@@ -99,7 +91,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <p className='page-title'>CoinCap</p>
+            <p><span className='page-title'>CoinCap</span></p>
             <CoinTable
                 data={paginatedData}
                 favorites={favorites}

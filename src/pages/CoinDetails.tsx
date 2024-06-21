@@ -5,29 +5,14 @@ import CoinDetail from '../components/CoinDetail';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import HistoryTable from '../components/HistoryTable';
-
-interface CoinHistory{
-  priceUsd: string;
-  time: string;
-}
-
-interface Coin {
-  id: string;
-  symbol: string;
-  name: string;
-  priceUsd: string;
-  marketCapUsd: string;
-  changePercent24Hr: string;
-  volumeUsd24Hr: string;
-  supply: string;
-  explorer: string;
-}
+import { Coin } from '../interfaces/Coin';
+import { CoinHistory } from '../interfaces/CoinHistory';
 
 const CoinDetails: React.FC = () => {
 
   const { id } = useParams<{ id: string }>();
-  const [coin, setCoin] = useState<Coin | null>(null);
-  const [coinHistory, setcoinHistory] = useState<CoinHistory[]>([]);
+  const [coin, setCoin] = useState<Coin| null>(null);
+  const [coinHistory, setCoinHistory] = useState<CoinHistory[]>([]);
   const MARKET_CAP_USD = 'Market Cap';
   const VOLUME_24_HR = 'Volume (24 hr)';
   const SUPPLY = 'Supply';
@@ -39,7 +24,7 @@ const CoinDetails: React.FC = () => {
         const coinData = await axios.get(`https://api.coincap.io/v2/assets/${id}`);
         setCoin(coinData.data.data);
         const coinHistoryData = await axios.get(`https://api.coincap.io/v2/assets/${id}/history?interval=m5`);
-        setcoinHistory(coinHistoryData.data.data);
+        setCoinHistory([...coinHistoryData.data.data].reverse());
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -51,7 +36,7 @@ const CoinDetails: React.FC = () => {
     return () => clearInterval(interval);
   }, [id]);
 
-  if (!coin) {
+  if (!coin || coinHistory.length === 0) {
     return <div>Loading...</div>;
   }
 

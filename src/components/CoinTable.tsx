@@ -3,23 +3,7 @@ import { Link } from 'react-router-dom';
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
-
-interface Coin {
-    id: string;
-    symbol: string;
-    name: string;
-    priceUsd: string;
-    marketCapUsd: string;
-}
-
-interface CoinTableProps {
-    data: Coin[];
-    favorites: string[];
-    onToggleFavorite: (id: string) => void;
-    sortBy: string;
-    sortOrder: 'asc' | 'desc';
-    onSort: (sortBy: string) => void;
-}
+import { CoinTableProps } from '../interfaces/CoinTableProps';
 
 const CoinTable: React.FC<CoinTableProps> = ({
     data, favorites, onToggleFavorite, sortBy, sortOrder, onSort

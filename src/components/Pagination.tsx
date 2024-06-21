@@ -1,11 +1,6 @@
 import React from 'react';
-
-
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
+import { PaginationProps } from '../interfaces/PaginationProps';
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
 
@@ -21,12 +16,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
               <a 
                 className="page-link disabled"
                 key={page}
-                onClick={() => onPageChange(page)}
               >
                 {page}
               </a> :
               <a 
-                className="page-link"
+                className="page-link hover-enabled"
                 key={page}
                 onClick={() => onPageChange(page)}
               >

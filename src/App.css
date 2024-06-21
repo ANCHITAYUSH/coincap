@@ -65,7 +65,7 @@ td a:hover{
 .page-title{
   font-size: 56px;
   font-weight: 500;
-  background: -webkit-linear-gradient(85deg, #1B9CFC, #ff5546);
+  background: -webkit-linear-gradient(17deg, #1B9CFC, #ff5546);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 }
@@ -114,4 +114,17 @@ td a:hover{
 
 .history tbody{
   height: 50vh;
+}
+
+.page-item .hover-enabled:hover{
+  transform: scale(1.2);
+  font-size: 17px;
+  font-weight: 600;
+  transition: transform 0.5s ease,font-size 0.5s ease,font-weight 0.5s ease;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.page-item .disabled:hover{
+  background-color: white;
 }

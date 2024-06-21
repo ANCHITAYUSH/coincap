@@ -1,13 +1,4 @@
-import React from 'react';
-
-interface CoinHistory{
-    priceUsd: string;
-    time: string;
-}
-
-interface HistoryTableProps{
-    data: CoinHistory[];
-}
+import { HistoryTableProps } from '../interfaces/HistoryTableProps';
 
 const HistoryTable: React.FC<HistoryTableProps> = ({data}) => {
 

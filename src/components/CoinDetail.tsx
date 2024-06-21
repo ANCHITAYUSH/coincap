@@ -1,12 +1,7 @@
 import React from 'react';
+import { CoinDetailProps } from '../interfaces/CoinDetailProps';
 
-interface KeyValue {
-    coinKey: string;
-    coinValue: string;
-    coinSymbol: string;
-}
-
-const CoinDetail: React.FC<KeyValue> = ({coinKey, coinValue, coinSymbol}) => {
+const CoinDetail: React.FC<CoinDetailProps> = ({coinKey, coinValue, coinSymbol}) => {
   return (
     <div>
       <p>
