@@ -1,46 +1,125 @@
-# Getting Started with Create React App
+# CoinCap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CoinCap is a React application built with TypeScript that displays real-time cryptocurrency data fetched from the CoinCap API. The application features a paginated table view with sorting and favoriting capabilities, as well as a detailed view and history for individual cryptocurrencies.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Available Scripts](#available-scripts)
+- [Dependencies](#dependencies)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Real-Time Cryptocurrency Data**:
+    - Fetch data from the CoinCap API (https://api.coincap.io/v2/assets).
+    - Display cryptocurrency data in a table with columns for the symbol, name, price, and market cap in USD.
+    - Refresh data every 10 seconds.
+    - Pagination with 10 items per page.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Table Features**:
+    - Sorting by symbol, name, price, and market cap.
+    - Persistent sorting across data refreshes.
+    - Clickable currency names that redirect to a details page.
 
-### `npm test`
+3. **Favorites Feature**:
+    - Toggle button for favoriting/unfavoriting cryptocurrencies.
+    - Store favorite list in local storage.
+    - Persist favorite status across sessions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Details Page**:
+    - Fetch data from the CoinCap API (https://api.coincap.io/v2/assets/{{id}}) using dynamic route parameters.
+    - Display detailed information for selected cryptocurrencies.
 
-### `npm run build`
+5. **History Table**:
+    - Fetch data from the CoinCap API (https://api.coincap.io/v2/assets/{{id}}/history?interval={{interval}}).
+    - Display price of the selected cryptocurrencies for every 5 minutes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. **Testing**:
+    - Jest setup for unit testing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To install the dependencies and run the application locally, follow these steps:
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ```bash
+    git clone https://github.com/ANCHITAYUSH/coincap.git
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Navigate to the project directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```bash
+    cd coincap
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Install the dependencies:
 
-## Learn More
+    ```bash
+    npm install
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Start the application:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    npm start
+    ```
+
+    The application will be available at `http://localhost:3000`.
+
+## Usage
+
+The CoinCap allows you to:
+- View a list of cryptocurrencies with real-time data.
+- Sort and paginate the cryptocurrency table.
+- Favorite/unfavorite cryptocurrencies.
+- View detailed information about selected cryptocurrencies.
+- View history of selected cryptocurrencies.
+
+## Project Structure
+
+```plaintext
+src/
+  ├── components/
+  │   ├── CoinDetail.tsx
+  │   ├── CoinTable.tsx
+  │   ├── HistoryTable.tsx
+  │   └── Pagination.tsx
+  ├── constants/
+  │   └── index.ts
+  ├── interfaces/
+  │   ├── Coin.ts
+  │   ├── CoinDetailProps.ts
+  │   ├── CoinHistory.ts
+  │   ├── CoinTableProps.ts
+  │   ├── HistoryTableProps.ts
+  │   └── PaginationProps.ts
+  ├── pages/
+  │   ├── CoinDetails.tsx
+  │   └── Dashboard.tsx
+  ├── tests/
+  │   ├── components/
+  │   │   ├── CoinDetail.test.tsx
+  │   │   └── CoinTable.test.tsx
+  │   ├── pages/
+  │   │   ├── CoinDetails.test.tsx
+  │   │   └── Dashboard.test.tsx
+  ├── App.tsx
+  ├── index.tsx
+  └── ... (other files)
+   ```
+
+## Technology and Frameworks
+- HTML & CSS
+- Typescript
+- React
+- Bootstrap
+- Material UI
+- Coincap APIs
+
