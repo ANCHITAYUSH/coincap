@@ -9,10 +9,9 @@ CoinCap is a React application built with TypeScript that displays real-time cry
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Available Scripts](#available-scripts)
-- [Dependencies](#dependencies)
+- [Technologies and Frameworks](#technologies-and-frameworks)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+- [Extra Features](#extra-features)
 
 ## Features
 
@@ -115,7 +114,31 @@ src/
   └── ... (other files)
    ```
 
-## Technology and Frameworks
+## Available Scripts
+
+ the project directory, you can run:
+
+    ```bash
+    npm start
+    ```
+Runs the app in the development mode. Open http://localhost:3000 to view it in your browser.
+
+    ```bash
+    npm run build
+    ```
+Builds the app for production to the build folder.
+
+    ```bash
+    npm test
+    ```
+Launches the test runner in the interactive watch mode. See the section about running tests for more information.
+
+    ```bash
+    npm run eject
+    ```
+If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+
+## Technologies and Frameworks
 - HTML & CSS
 - Typescript
 - React
@@ -123,3 +146,20 @@ src/
 - Material UI
 - Coincap APIs
 
+## Testing
+The project uses Jest and React Testing Library for unit testing. Test files are located in the src/tests directory and follow the same structure as the main codebase.
+
+### Running Tests
+To run the tests, use the following command:
+
+    ```bash
+    npm test
+    ```
+
+## Extra Features
+- Sorting applied on all the fields of the Coin table.
+- Added fields in Coin Details page.
+    - A measure of how much of a cryptocurrency was traded in the last 24 hours.
+    - The amount of coins that are circulating in the market and are in public hands.
+    - Amount of price decreased or increased in last 24 hours.
+- Added History Table in Coin Details page.
