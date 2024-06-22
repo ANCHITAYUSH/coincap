@@ -4,11 +4,12 @@ import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter as Router } from 'react-router-dom';
 import CoinTable from '../components/CoinTable';
 import { CoinTableProps } from '../interfaces/CoinTableProps';
+import { Coin } from '../interfaces/Coin';
 
 // Mock data for testing
-const mockData = [
-  { id: 'bitcoin', symbol: 'BTC', name: 'Bitcoin', priceUsd: '45000.789', marketCapUsd: '850000000.00' },
-  { id: 'ethereum', symbol: 'ETH', name: 'Ethereum', priceUsd: '3000.123', marketCapUsd: '350000000.00' },
+const mockData: Coin[] = [
+  { id: 'bitcoin', symbol: 'BTC', name: 'Bitcoin', priceUsd: '45000.789', marketCapUsd: '850000000.00',changePercent24Hr: '',volumeUsd24Hr: '',supply: '',explorer: '' },
+  { id: 'ethereum', symbol: 'ETH', name: 'Ethereum', priceUsd: '3000.123', marketCapUsd: '350000000.00',changePercent24Hr: '',volumeUsd24Hr: '',supply: '',explorer: '' },
 ];
 
 const mockFavorites = ['bitcoin'];

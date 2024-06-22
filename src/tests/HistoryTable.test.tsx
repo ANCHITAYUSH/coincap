@@ -6,9 +6,9 @@ import { CoinHistory } from '../interfaces/CoinHistory';
 import { GMT, PRICE, TIME, USD } from '../constants';
 
 const mockData: CoinHistory[] = [
-  { priceUsd: '31000.00', time: 1620000000000 },
-  { priceUsd: '32000.00', time: 1620005000000 },
-  { priceUsd: '33000.00', time: 1620010000000 },
+  { priceUsd: '31000.00', time: '1620000000000' },
+  { priceUsd: '32000.00', time: '1620005000000' },
+  { priceUsd: '33000.00', time: '1620010000000' },
 ];
 
 describe('HistoryTable Component', () => {
