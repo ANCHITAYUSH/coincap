@@ -103,12 +103,11 @@ src/
   │   ├── CoinDetails.tsx
   │   └── Dashboard.tsx
   ├── tests/
-  │   ├── components/
-  │   │   ├── CoinDetail.test.tsx
-  │   │   └── CoinTable.test.tsx
-  │   ├── pages/
-  │   │   ├── CoinDetails.test.tsx
-  │   │   └── Dashboard.test.tsx
+  │   ├── CoinDetail.test.tsx
+  │   ├── CoinTable.test.tsx
+  │   ├── HistoryTable.test.tsx
+  │   └── Pagination.test.tsx
+  ├── App.css
   ├── App.tsx
   ├── index.tsx
   └── ... (other files)

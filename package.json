@@ -14,14 +14,18 @@
     "@types/node": "^16.18.100",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.2",
+    "axios-mock-adapter": "^1.22.0",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.3",
+    "jest": "^29.7.0",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "ts-jest": "^29.1.5",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -48,5 +52,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "babel-jest": "^29.7.0"
+  },
+  "description": "CoinCap is a React application built with TypeScript that displays real-time cryptocurrency data fetched from the CoinCap API. The application features a paginated table view with sorting and favoriting capabilities, as well as a detailed view and history for individual cryptocurrencies.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
